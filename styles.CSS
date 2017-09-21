@@ -1,17 +1,23 @@
 body{
-font-family: 'Anton', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+background-color: beige;
 }
 #myheader{
-	color: orange;
+	color: teal;
+	font-size: 26px;
+}
+li{
+	color: black;
 	font-size: 16px;
 }
-.my-list-item{
-	color: brown;
-	font-size: 10px;
-}
+
 .my-list-item a{
-	color:#555ccc;
+	text-decoration: none;
+}
+a:visited{
+	color:gray;
+
 }
 .my-list-item a:hover{
-	color:yellow;
+	color:brown;
 }
