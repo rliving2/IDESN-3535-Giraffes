@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TipCALC</title>
+
+    <style>
+        .wrapper {
+            box-shadow: 5px 5px 5px lightgray;
+          border: 2px solid maroon;
+          width: 330px;
+          height: 380px;
+          background-color: lightgreen;
+          padding: 10px;
+          font-size: 30px;
+          font-family: Calibri;
+          color: orange;
+          box-shadow: black;
+          border-radius: 5%;
+          margin: 50px;
+        }
+        span {
+          width: 200px;
+          padding: 10px 5px;
+        }
+        input {
+          width:250px;
+          margin: 10px 0 10px 0;
+        }
+
+        h3 {
+          margin-left: 15px;
+        }
+        .amount-field {
+          line-height: 31px;
+          padding: 2px;
+          font-size: 16px;
+          color: darkblue;
+          margin-left: 18px;
+          border-radius: 5%;
+        }
+        .tip-amount {
+          color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+        <script>
+            function tipCalculate (slider, bill){
+          var tip = document.getElementById('tipamount');
+          var slideval = document.getElementById('slideval');
+          var bill = document.getElementById(bill).value;
+          var prcnt = slider * .01;
+          
+          
+          if (bill == null || bill == '') {
+            tip.innerHTML = 'Please enter an amount';
+            return false;
+          }
+          if(isNaN(bill)) {
+            tip.innerHTML = 'Please enter a number';
+            return false;
+          }
+          if(bill >= 0){
+            tip.innerHTML = '$' + (bill * prcnt) .toFixed(2);
+          slideval.innerHTML = slider + '%';
+          }
+        }
+        </script>
+
+
+        <div class="wrapper">
+          <span>Total Bill Amount :</span>
+          $ <input type="text" id="bill" class="amount-field"> <br>
+          <span>Tip Percentage:</span>
+          <input type="range" min="0" max="50" value="0" step="1" onchange="tipCalculate(this.value, 'bill')" class="range-style">
+          <span id="slideval">0%</span>
+          <h3>Tip to leave = 
+            <span id="tipamount" class="tip-amount">$0.00</span>
+          </h3>                                           
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API tutorial</title>
+	<link href="../normalize.css" rel="stylesheet"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h2>Syllabus</h2>
+	<a href="http://bit.ly/2gEbCrd" target="_blank">Syllabus</a>
+
+	<h2>Course Schedule</h2>
+	<table id="class-schedule" border="1">
+	</table>
+
+	<script>
+		$(document).ready(function() {
+
+		})
+
+		$.ajax({
+			url: "http://www.bvandorn.com/idesn-3535/schedule.json",
+			data: {},
+			success: function(response) {
+				console.log(response);
+
+			}
+		})
+	</script>
+
+</body>
+</html>

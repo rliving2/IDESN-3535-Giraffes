@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colors</title>
+
+
+		<style>
+		#circle {
+			width: 150px;
+			height: 150px;
+			border-radius: 45%;
+			border: 1px solid black;
+			margin:60px;
+		}
+
+		.buttons{
+			padding: 10px;
+			margin: 5px;
+			border-radius: 10px;
+			background-color: white;
+			border-style: 1px ridge white;
+
+		}
+
+		.enabled{
+			background: #e6e6e6;
+		}
+
+		.red{
+			background: red;
+		}
+
+		.yellow{
+			background: yellow;
+		}
+
+		.blue{
+			background: blue;
+		}
+
+		.red.yellow{
+			background: darkorange;
+		}
+
+		.red.blue{
+			background: purple;
+		}
+
+		.yellow.blue{
+			background: green;
+		}
+
+		.red.yellow.blue{
+			background: #4b494a;
+		}
+
+		</style>
+
+
+	</head>
+	<body>
+		<button class="buttons" id="red1">add RED</button>
+		<button class="buttons" id="yellow1">add YELLOW</button>
+		<button class="buttons" id="blue1">add BLUE</button>
+
+
+		<div id="circle"></div>
+
+		<script>
+			function clickRed() {
+
+			document.getElementById("red1").classList.toggle("enabled")
+
+			const circle = document.getElementById("circle")
+			circle.classList.toggle("red")
+			}
+			const element1 = document.getElementById("red1");
+			element1.addEventListener("click", clickRed);
+		
+
+
+	          	function clickYellow() {
+
+	          	document.getElementById("yellow1").classList.toggle("enabled")
+				
+				const circle = document.getElementById("circle")
+				circle.classList.toggle("yellow")
+				}
+				const element2 = document.getElementById("yellow1");
+				element2.addEventListener("click", clickYellow);
+		
+
+
+					function clickBlue() {
+
+					document.getElementById("blue1").classList.toggle("enabled")
+					
+					const circle = document.getElementById("circle")
+					circle.classList.toggle("blue")
+					}
+					const element3 = document.getElementById("blue1");
+					element3.addEventListener("click", clickBlue);
+
+
+
+	
+				
+
+		</script>
+			
+
+
+	</body>
+</html>

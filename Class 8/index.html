@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="../normalize.css" rel="stylesheet" />
+	<link href="styles.css" rel="stylesheet" />
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	
+	<script src="template engine.js"></script>
+
+	<script src="templates.js.html"></script>
+	<script>
+		$(document).ready(function(){
+
+		});
+	</script>
+
+</head>
+<body>
+	<script>
+		$(document).ready(function(){
+			$("body").prepend( getTemplate(headerTemplate, {class: 'home',title: 'Home'}));
+		});
+	</script>
+
+
+	<p>yucckkkk1</p>
+
+	<footer>
+		<script>
+			$(document).ready(function(){
+				$("body").append( getTemplate(footerTemplate, {class: 'footer'}));
+			});
+		</script>
+	</footer>
+
+
+
+</body>
+
+
+</html>

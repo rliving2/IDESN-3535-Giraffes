@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Homework- Class Schedule</title>
+
+	<link rel="stylesheet" type="text/css" href="../Class 2/normalize.css">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+$.ajax({
+url: "http://www.bvandorn.com/idesn-3535/schedule.json",
+data: {},
+success: function(response){
+console.log(response);
+
+for (let i = 0; i < response.classes.length; i++){
+const currentClass = response.classes[i];
+
+const classRow = document.createElement('tr');
+
+const dateCol = document.createElement('td');
+dateCol.innerHTML = "Class " + i + "<br />" + currentClass.date;
+classRow.append(dateCol);
+
+$("#class-schedule").append(classRow);
+//agenda
+const agendaCol = document.createElement('td');
+const agendaList = document.createElement('ul');
+currentClass.agenda.forEach(function(agendaItem){
+const agendaListItem = document.createElement('li');
+agendaListItem.innerText = agendaItem;
+agendaList.append(agendaListItem);
+});
+agendaCol.append(agendaList);
+classRow.append(agendaCol);
+
+//homework
+const homeworkCol = document.createElement('td');
+const homeworkList = document.createElement('ul');
+currentClass.homework.forEach(function(homeworkItem){
+const homeworkListItem = document.createElement('li');
+homeworkListItem.innerText = homeworkItem;
+homeworkList.append(homeworkListItem);
+});
+homeworkCol.append(homeworkList);
+classRow.append(homeworkCol);
+
+
+//notes
+const notesCol = document.createElement('td');
+const notesList = document.createElement('ul');
+if (currentClass.links){
+currentClass.links.forEach(function(link){
+notesList.innerHTML += `<li><a href="${link,link}">${link.name}</a><li>`;
+});
+}
+notesCol.append(notesList);
+classRow.append(notesCol);
+}
+}
+})
+
+});
+$("#class-schedule > tbody").append(classRow);
+
+</script>
+
+<style>
+table {
+border-collapse: collapse;
+margin-left: 60px;
+font-family: 'News Cycle', sans-serif;
+
+}
+#head {
+background-color: #0096A8;
+border-radius: 5%;
+margin: 5px;
+padding: 10px;
+font-size: 20px;
+font-family: 'News Cycle', sans-serif;
+
+}
+
+h1 {
+margin-left: 420px;
+}
+
+h2 {
+margin-left: 120px;
+margin-top: -5px;
+}
+tr:nth-child(even) 
+{
+background-color: #FFAA71;
+}
+
+tr:nth-child(odd) 
+{
+background-color: #C48AB5;
+}
+
+</style>
+</head>
+<body>
+
+<div id="head">
+<h1>Advanced Web Design IDESN-3535</h1>
+<h2><a href="http://bit.ly/2gEbCrd" target="_blank">Syllabus</a></h2>
+
+<h2>Welcome to the Course Schuedule</h2>
+</div>
+
+
+<table id="class-schedule" border="1">
+<thead>
+<tr>
+<th>Class</th>
+<th>Agenda</th>
+<th>Homework</th>
+<th>Class Notes</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</body>
+</html>
