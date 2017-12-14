@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SHIFT</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="utils.js"></script>
+	<link href="normalize.css" rel="stylesheet"/>
+	<link href="styles.css" rel="stylesheet" />
+
+	<script>
+		function updateOverallAvailability() {
+			const hours = parseInt($("#hourRange").val())
+			const workload = parseInt($("#workRange").val())
+			const stress = parseInt($("#stressRange").val())
+			console.log((hours + workload + stress)/3)
+			$("#Availabity").val(100 - ((hours + workload + stress)/3))
+
+
+		}
+
+		$(document).ready(function(){
+			$("#hourRange, #workRange, #stressRange").on("change", updateOverallAvailability);
+			updateOverallAvailability();
+
+
+		});
+
+
+	</script>
+
+</head>
+
+<body>
+	<div id="header2">
+
+		<div id="headtitle">
+			<h1>STATS</h1>
+		</div>
+		<a href="home.html"><div id="back"><h1><</h1></div></a>
+	</div>
+
+	<div id="body">
+		<div class= "nursestats" id="nina">
+
+			<div class="left" id="mystats">
+				<div id="name">
+					
+					<div class= "name-holder">
+						
+						<h2 class="name">
+							<div class="online"></div>
+						Nina Martin</h2>
+					</div>
+					<h3>Registered Nurse (RN)</h3>
+					<h3>4th Floor Oncology</h3>
+				</div>
+				<div id="editbox">
+					<h4>My shift hours</h4>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="93" class="slider" id="hourRange">
+					</div>
+					<form>
+						<select id="starttimes">
+							<option >7:00 am</option>
+							<option>8:00 am</option>
+							<option>9:00 am</option>
+							<option>10:00 am</option>
+							<option>11:00 am</option>
+							<option>12:00 pm</option>
+							<option>1:00 pm</option>
+							<option>2:00 pm</option>
+							<option>3:00 pm</option>
+							<option>4:00 pm</option>
+							<option>5:00 pm</option>
+							<option>6:00 pm</option>
+							<option>7:00 pm</option>
+						</select>
+
+						<select id="endtimes">
+							<option >7:00 pm</option>
+							<option>8:00 pm</option>
+							<option>9:00 pm</option>
+							<option>10:00 pm</option>
+							<option>11:00 pm</option>
+							<option>12:00 am</option>
+							<option>1:00 am</option>
+							<option>2:00 am</option>
+							<option>3:00 am</option>
+							<option>4:00 am</option>
+							<option>5:00 am</option>
+							<option>6:00 am</option>
+							<option>7:00 am</option>
+						</select>
+					</form>
+
+					<h4>My workload</h4>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="56" class="slider" id="workRange">
+					</div>
+					<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+					<h4>My stress level</h4>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="70" class="slider" id="stressRange">
+					</div>
+					<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+				</div>
+
+				<h4>Overall availability</h4>
+				<div id="slidecontainer">
+					<input type="range" disabled min="1" max="100" value="70" class="slider" id="Availabity">
+				</div>
+				<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+			</div>
+			<div class="right" id="mybio">
+				<div class="pic">
+					<img src="images/nina.png">
+				</div>
+				<h4>Emergency take 5</h4>
+
+				<div class="container">
+					<label class="switch"><input type="checkbox" />    <div></div>
+					</label>
+				</div>
+
+				<h4>Notes about Nina</h4>
+				<textarea>BSN degree from SUNY Stonybrook, June 2011. Currently working on my masters in nursing education. It’s my 3rd year in Oncology as a 7am-7pm RN and I love it!
+
+On my days off I enjoy hiking and playing softball!</textarea>
+			</div>
+		</div>
+
+				<div class= "nursestats" id="maya">
+
+					<div class="left" id="mystats">
+						<div id="name">
+							
+							<div class= "name-holder">
+								
+								<h2 class="name">
+									<div class="online"></div>
+								Maya Packard</h2>
+							</div>
+							<h3>Registered Nurse (RN)</h3>
+							<h3>4th Floor Oncology</h3>
+						</div>
+						<div id="editbox">
+							<h4>My shift hours</h4>
+							<div id="slidecontainer">
+								<input type="range" min="1" max="100" value="38" class="slider" id="hourRange" disabled>
+							</div>
+							<form>
+								<select id="starttimes" disabled>
+									<option>10:00 am</option>
+								</select>
+
+								<select id="endtimes" disabled>
+									<option>10:00 pm</option>
+								</select>
+							</form>
+
+							<h4>My workload</h4>
+							<div id="slidecontainer">
+								<input type="range" min="1" max="100" value="45" class="slider" id="workRange" disabled>
+							</div>
+							<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+							<h4>My stress level</h4>
+							<div id="slidecontainer">
+								<input type="range" min="1" max="100" value="18" class="slider" id="stressRange" disabled>
+							</div>
+							<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+						</div>
+
+						<h4>Overall availability</h4>
+						<div id="slidecontainer">
+							<input type="range" disabled min="1" max="100" value="75" class="slider" id="Availabity">
+						</div>
+						<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+					</div>
+					<div class="right" id="mybio">
+						<div class="pic">
+							<img src="images/maya.png">
+						</div>
+
+						<h4>Notes about Maya</h4>
+						<textarea disabled>BSN degree from SUNY Oswego, May 2014. New to the floor but excited to be in Oncology as a 10am-10pm RN!
+
+Hobbies include running,  singing and baking!
+						</textarea>
+
+						<button class="send"> Send Message </button>
+					</div>
+				</div>
+
+						<div class= "nursestats" id="olga">
+
+							<div class="left" id="mystats">
+								<div id="name">
+									
+									<div class= "name-holder">
+										
+										<h2 class="name">
+											<div class="online"></div>
+										Olga Patacki</h2>
+									</div>
+									<h3>Nurse Practitioner (NP)</h3>
+									<h3>4th Floor Oncology</h3>
+								</div>
+								<div id="editbox">
+									<h4>My shift hours</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100" value="50" class="slider" id="hourRange" disabled>
+									</div>
+									<form>
+										<select id="starttimes" disabled>
+											<option>3:00 pm</option>
+										</select>
+
+										<select id="endtimes" disabled>
+											<option>3:00 am</option>
+										</select>
+									</form>
+
+									<h4>My workload</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100" value="70" class="slider" id="workRange" disabled>
+									</div>
+									<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+									<h4>My stress level</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100" value="30" class="slider" id="stressRange" disabled>
+									</div>
+									<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+								</div>
+
+								<h4>Overall availability</h4>
+								<div id="slidecontainer">
+									<input type="range" disabled min="1" max="100" value="25" class="slider" id="Availabity">
+								</div>
+								<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+							</div>
+							<div class="right" id="mybio">
+								<div class="pic">
+									<img src="images/olga.png">
+								</div>
+
+								<h4>Notes about Olga</h4>
+								<textarea disabled>BSN degree from William F. Connell School of Nursing, Masters from UMass Boston 2006. 19th year in Oncology.
+
+I like puzzles, reading, and paintball with my sons.
+								</textarea>
+
+								<button class="send"> Send Message </button>
+							</div>
+						</div>
+
+							<div class= "nursestats2" id="stephanie">
+
+							<div class="left" id="stephstats">
+								<div id="name">
+									
+									<div class= "name-holder">
+										
+										<h2 class="name">
+											<div class="offline"></div>
+										Stephanie Platt</h2>
+									</div>
+									<h3>Registered Nurse (RN)</h3>
+									<h3>4th Floor Oncology</h3>
+								</div>
+								<div id="editbox">
+									<h4>My shift hours</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100" value="0" class="slider" id="hourRange" disabled>
+									</div>
+									<form>
+										<select id="starttimes" disabled>
+											<option>2:00 am</option>
+										</select>
+
+										<select id="endtimes" disabled>
+											<option>2:00 pm</option>
+										</select>
+									</form>
+
+									<h4>My workload</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100"  value="0" class="slider" id="workRange" disabled>
+									</div>
+									<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+									<h4>My stress level</h4>
+									<div id="slidecontainer">
+										<input type="range" min="1" max="100" value="0" class="slider" id="stressRange" disabled>
+									</div>
+									<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+								</div>
+
+								<h4>Overall availability</h4>
+								<div id="slidecontainer">
+									<input type="range" disabled min="1" max="100" value="0" class="slider" id="Availabity">
+								</div>
+								<h5>low - - - - - - - - - - - - - - - - - - - - - - - - - high</h5>
+
+							</div>
+							<div class="right2" id="mybio">
+								<div class="pic">
+									<img src="images/stephanie.png">
+								</div>
+
+								<h4>Notes about Stephanie</h4>
+								<textarea disabled>Brockton Hospital School of Nursing 2009. Recent transfer from Obstetrics, excited to be here!
+
+When I’m not at work I love needlepoint/embroidery, watching cheesy movies and cuddling my 3 pugs.
+								</textarea>
+
+								<button class="send"> Send Message </button>
+							</div>
+						</div>
+
+	</body>
+	</html>

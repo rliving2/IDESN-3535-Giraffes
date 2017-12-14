@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SHIFT</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="utils.js"></script>
+	<link href="normalize.css" rel="stylesheet"/>
+	<link href="styles.css" rel="stylesheet" />
+
+	<script>
+		function updateOverallAvailability() {
+			const hours = parseInt($("#hourRange").val())
+			const workload = parseInt($("#workRange").val())
+			const stress = parseInt($("#stressRange").val())
+			console.log((hours + workload + stress)/3)
+			$("#Availabity").val(100 - ((hours + workload + stress)/3))
+
+			
+		}
+
+		$(document).ready(function(){
+			$("#hourRange, #workRange, #stressRange").on("change", updateOverallAvailability);
+			updateOverallAvailability();
+			
+
+		});
+
+
+	</script>
+
+</head>
+
+<body>
+	<div id="header2">
+		
+			<div id="headtitle">
+				<h1>STATS</h1>
+			</div>
+			<a href="home.html"><div id="back"><h1><</h1></div></a>
+	</div>
+
+	<div style="background-color: orange; width: 100%; height: 500px; border-top: 50px">
+		<div style="background-color: purple; width: 65%; height: inherit; float: left;"><div id="name">
+					<div id="online"></div>
+					<h2>Nina Martin</h2>
+					<p>Registered Nurse (RN)</p>
+					<p>4th Floor Oncology</p>
+				</div>
+				<div id="editbox">
+					<p>My shift hours</p>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="93" class="slider" id="hourRange">
+					</div>
+					<form>
+						<select id="starttimes">
+							<option >7:00 am</option>
+							<option>8:00 am</option>
+							<option>9:00 am</option>
+							<option>10:00 am</option>
+							<option>11:00 am</option>
+							<option>12:00 pm</option>
+							<option>1:00 pm</option>
+							<option>2:00 pm</option>
+							<option>3:00 pm</option>
+							<option>4:00 pm</option>
+							<option>5:00 pm</option>
+							<option>6:00 pm</option>
+							<option>7:00 pm</option>
+						</select>
+
+						<select id="endtimes">
+							<option >7:00 pm</option>
+							<option>8:00 pm</option>
+							<option>9:00 pm</option>
+							<option>10:00 pm</option>
+							<option>11:00 pm</option>
+							<option>12:00 am</option>
+							<option>1:00 am</option>
+							<option>2:00 am</option>
+							<option>3:00 am</option>
+							<option>4:00 am</option>
+							<option>5:00 am</option>
+							<option>6:00 am</option>
+							<option>7:00 am</option>
+						</select>
+					</form>
+
+					<p>My workload</p>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="56" class="slider" id="workRange">
+					</div>
+					<p>low - - - - - - - - - - - - - - - - - - - - - - - - - high</p>
+
+					<p>My stress level</p>
+					<div id="slidecontainer">
+						<input type="range" min="1" max="100" value="70" class="slider" id="stressRange">
+					</div>
+					<p>low - - - - - - - - - - - - - - - - - - - - - - - - - high</p>
+				</div>
+
+				<p>Overall availability</p>
+				<div id="slidecontainer">
+					<input type="range" disabled min="1" max="100" value="70" class="slider" id="Availabity">
+				</div>
+				<p>low - - - - - - - - - - - - - - - - - - - - - - - - - high</p>
+		</div>
+
+		<div style="background-color: red; width: 32%; height: inherit; float: right">
+		</div>
+	</div>
+
+
+</body>
+</html>

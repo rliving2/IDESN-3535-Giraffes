@@ -3,7 +3,7 @@ function getParameterByName(name) {
   			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
      			results = regex.exec(location.search);
   				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-
+}
 function replaceString(string, key, value){
   const searchTerm = "{{" + key + "}}";
   return string.replace(searchTerm, value);

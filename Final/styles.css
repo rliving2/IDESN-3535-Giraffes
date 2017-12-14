@@ -1,0 +1,401 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+
+
+/*#progressBar {
+  width: 90%;
+  margin: 10px auto;
+  height: 5px;
+  background-color: lightgray;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 10px; /* same as #progressBar height if we want text middle aligned */
+/*  width: 0;
+  background-color: gray;
+  box-sizing: border-box;
+}
+*/
+#slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    /*appearance: none;*/
+    width: 300px; /* Full-width */
+    height: 5px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+   
+}
+
+/* The slider handle*/ 
+.slider::-webkit-slider-thumb {
+    border-radius: 50px;
+    width: 10px; /* slider handle width */
+    height: 10px; /* Slider handle height */
+    cursor: pointer; /* Cursor on hover */
+}
+
+
+
+
+
+
+#header{
+  background-color: #9BBCD1;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#header2{
+  background-color: #A7D2B7;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#back{
+  color: white;
+  background-color: #83B194;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+h1{
+    font-family: sans-serif;
+}
+
+p{
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+h3{
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+
+  margin-top: -15px;
+}
+
+h4{
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+h5{
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+
+  margin-top: 5px;
+}
+
+h6{
+  font-family: sans-serif;
+  margin-top: 75px;
+  font-size: 1.5em;
+
+}
+
+
+#headtitle{
+  text-align: center;
+ /* background-color: red;*/
+  height: 50px;
+  width: 100%;
+  position: absolute;
+}
+
+#headtitle h1 {
+  margin-top: 5px;
+}
+
+a #back h1 {
+  margin-top: 5px;
+}
+
+#back h1 {
+  margin-top: 0px;
+  color: white;
+  text-decoration: none;
+}
+
+#back h1 a{
+  margin-top: 0px;
+  color: white;
+  text-decoration: none;
+}
+h2{
+  font-family: sans-serif;
+
+}
+
+.online{
+  height: 8px;
+  width: 8px;
+  background-color: #7FAC90;
+  border-radius: 50%;
+  position: relative;
+  top: 15px;
+  left: -15px;
+
+}
+
+.offline{
+  height: 8px;
+  width: 8px;
+  background-color: #ededed;
+  border: 2px solid gray;
+  border-radius: 50%;
+  position: relative;
+  top: 15px;
+  left: -15px;
+
+}
+
+#body{
+  padding-top: 50px;
+  width: 100%;
+  text-align: center; 
+}
+
+#input{
+  text-align: left;
+  padding: 30px;
+  height: 200px;
+  width: 300px;
+  display: inline-block;
+  background-color: lightgray;
+}
+
+#print{
+  width: 100px;
+  margin-top: 60px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+
+.homebutt{
+  border-radius: 10px;
+  height: 100px;
+  width: 330px;
+  display: inline-block;
+
+}
+
+#statsbutt{
+  background-color: #A7D2B7;
+  margin-top: 75px;
+}
+
+#tasksbutt{
+  background-color: #FEE293;
+}
+
+#relaxbutt{
+  background-color: #AE92B7;
+}
+
+button#submit{
+ float: right;
+ text-align: center;
+ width: 80px;
+ height: 25px;
+ border-radius: 10%;
+}
+
+button.send{
+  margin-top: 30px;
+  float: center;
+}
+
+input{
+  width: 240px;
+  margin-top: 5px;
+}
+
+#finger{
+  text-align: center;
+}
+
+.nursestats{
+  width: 100%;
+  border: 1px solid lightgray;
+  overflow-y: visible;
+  overflow: hidden;
+  height: 520px
+
+}
+
+.nursestats2{
+  width: 100%;
+  border: 1px solid lightgray;
+  background-color: #ededed;
+  overflow-y: visible;
+  overflow: hidden;
+  height: 520px
+
+}
+
+.left{
+  width: 66%;
+  min-width: 350px;
+  /*background-color: yellow;*/
+  float: left;
+  height: inherit;
+
+}
+
+.right{
+  width: 33%;
+  height: inherit;
+  background-color: #D3F4E0;
+  float: right;
+  position: relative;
+  top:0px;
+
+}
+
+.right2{
+  width: 33%;
+  height: inherit;
+  background-color: lightgray;
+  float: right;
+  position: relative;
+  top:0px;
+
+}
+
+img{
+  border-radius: 100%;
+  width: 150px;
+  border: 2px solid lightgray;
+}
+
+.pic{
+  margin-top: 40px;
+}
+
+.name-holder{
+  width: 100%;
+}
+
+.name{
+  display:inline-block; 
+
+}
+
+select{
+  margin-top: 5px;
+}
+
+select#starttimes{
+  margin-left: 0px;
+  margin-right: 130px;
+
+}
+
+textarea{
+  width: 80%;
+  height: 150px;
+}
+
+
+
+
+
+
+
+
+
+.container {
+  position: relative;
+  top: 0; right: 0; bottom: 0; left: 0;
+  height: 40px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+/** Switch
+ -------------------------------------*/
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+/**
+ * 1. Adjust this to size
+ */
+
+.switch {
+  display: inline-block;
+  font-size: 30px; /* 1 */
+  height: 1em;
+  width: 2em;
+  background: lightgray;
+  border-radius: 1em;
+}
+
+.switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+  -webkit-transition: all 300ms;
+     -moz-transition: all 300ms;
+          transition: all 300ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+          background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

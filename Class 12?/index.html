@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ratings API</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="ratingsapi.js"></script>
+
+	<script>
+		function renderRatings() {
+			$('#ratings').html("");
+			const ratings = getRatings().ratings;
+			let totalStars = 0;
+			let totalRatings = 0;
+			ratings.forEach(function(r){
+				if (r){
+					const row = document.createElement('div');
+					row.innerText =`Stars: ${r.stars} Comment: ${r.comment}` ;
+					$("#ratings").append(row);
+					totalRatings++;
+					// totalStars = totalStars + r.stars; "which is the same as below"
+					totalStars+= r.stars;
+				}
+
+			})
+			const averageRating = totalStars / totalRatings;
+			$("#average").text("Average rating: " +averageRating);
+		}
+		$(document).ready(function(){
+			renderRatings();
+			$("#ratebutton").on('click', function(){
+				const starAmount = parseInt($("#mydropdown").val());
+				const comment = $("#mycomment").val();
+				// console.log(starAmount);
+				// console.log(comment);
+				addRating({ stars: starAmount, comment: comment });
+				renderRatings();
+				$("#mycomment").val("");
+				$("#mydropdown").val("1");
+			});
+		});
+	</script>
+
+
+
+
+
+</head>
+<body>
+	<h1>Ratings APT</h1>
+
+	<div id="average"></div>
+
+	<div id="ratings">
+
+	</div>
+
+	<select id="mydropdown">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+
+	</select>
+	<input id="mycomment" />
+	<button id="ratebutton"> Rate </button>
+
+
+</body>
+</html>
